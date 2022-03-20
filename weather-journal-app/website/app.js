@@ -1,6 +1,8 @@
+console.log("hello from app");
+
 // to fix "document is not defined"
 window.addEventListener("DOMContentLoaded", loadApp, false);
-// window is not defined ????
+// but now: "window is not defined" ????
 
 function loadApp() {
   /* Global Variables */
