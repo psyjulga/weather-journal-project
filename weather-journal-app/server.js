@@ -4,6 +4,9 @@ const projectData = [];
 // const fetch = require("node-fetch"); => error, not supported
 import fetch from "node-fetch";
 
+// after changing everything to "import", it throws
+// "localhost:8000 not found" 404
+
 // Express to run server and routes
 import express from "express";
 
