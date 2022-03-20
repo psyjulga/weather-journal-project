@@ -1,10 +1,7 @@
 // Setup empty JS object to act as endpoint for all routes
-const projectData = [];
+const projectData = {};
 
 import fetch from "node-fetch";
-
-// after changing everything to "import", it throws
-// "localhost:8000 not found" 404
 
 // Express to run server and routes
 import express from "express";
@@ -39,16 +36,21 @@ const listening = () => console.log(`server running on port ${port}`);
 const port = 8000;
 const server = app.listen(port, listening);
 
-// Callback function to complete GET '/all' ????
-const getData = (request, response) => response.send("test");
-// if we switch to /all "test" is displayed
+// Callback function to complete GET '/all'
+const getData = (request, response) => response.send(projectData);
+// res.send =>like a return statement
 
 // Initialize all route with a callback function
 app.get("/all", getData);
 
 const postData = (request, response) => {
-  let data = request.body;
-  //projectData["myData"] = data.myData;
+  console.log("hello from postData");
+  const data = request.body;
+  console.log(data);
+  projectData["date"] = data.date;
+  projectData["temp"] = data.temp;
+  projectData["content"] = data.content;
+  response.send(projectData);
 };
 
 // Post Route
