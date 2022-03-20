@@ -1,7 +1,6 @@
 // Setup empty JS object to act as endpoint for all routes
 const projectData = [];
 
-// const fetch = require("node-fetch"); => error, not supported
 import fetch from "node-fetch";
 
 // after changing everything to "import", it throws
@@ -9,14 +8,19 @@ import fetch from "node-fetch";
 
 // Express to run server and routes
 import express from "express";
+//const express = require("express");
 
 // Start up an instance of app
 const app = express();
 
 /* Dependencies */
 /* Middleware*/
+
 import bodyParser from "body-parser";
+// const bodyParser = require("body-parser");
+
 import cors from "cors";
+// const cors = require("cors");
 
 //Here we are configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
