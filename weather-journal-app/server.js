@@ -5,7 +5,6 @@ import fetch from "node-fetch";
 
 // Express to run server and routes
 import express from "express";
-//const express = require("express");
 
 // Start up an instance of app
 const app = express();
@@ -14,10 +13,8 @@ const app = express();
 /* Middleware*/
 
 import bodyParser from "body-parser";
-// const bodyParser = require("body-parser");
 
 import cors from "cors";
-// const cors = require("cors");
 
 //Here we are configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -44,9 +41,7 @@ const getData = (request, response) => response.send(projectData);
 app.get("/all", getData);
 
 const postData = (request, response) => {
-  console.log("hello from postData");
   const data = request.body;
-  console.log(data);
   projectData["date"] = data.date;
   projectData["temp"] = data.temp;
   projectData["content"] = data.content;
